@@ -60,11 +60,12 @@ export async function handlePanel(request, env) {
 }
 
 export async function fallback(request) {
-    const url = new URL(request.url);
-    url.hostname = 'www.speedtest.net';
-    url.protocol = 'https:';
-    request = new Request(url, request);
-    return await fetch(request);
+     return new Response('<h1 style="text-align: center;color: rebeccapurple;">欢迎使用NetWork连接</h1>', { status: 200 });
+    // const url = new URL(request.url);
+    // url.hostname = 'www.speedtest.net';
+    // url.protocol = 'https:';
+    // request = new Request(url, request);
+    // return await fetch(request);
 }
 
 export async function getMyIP(request) {
